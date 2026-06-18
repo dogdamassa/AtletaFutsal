@@ -29,6 +29,7 @@ html {
 
 body {
   margin: 0;
+  overflow-x: hidden;
   background: var(--bg);
   color: var(--ink);
   font-family: "Inter", Arial, sans-serif;
@@ -111,6 +112,20 @@ h3 {
   backdrop-filter: blur(18px) saturate(1.2);
   -webkit-backdrop-filter: blur(18px) saturate(1.2);
   box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Quando rola para fora do topo, o header vira uma barra sólida
+   para não "brigar" com as fotos atrás dele. */
+.site-header.is-scrolled {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.site-header.is-scrolled .header-inner {
+  background: rgba(10, 10, 11, 0.96);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 14px 38px rgba(0, 0, 0, 0.55);
 }
 
 .brand {
@@ -1146,11 +1161,17 @@ h3 {
   }
 
   .header-inner {
+    display: flex;
+    justify-content: space-between;
     padding: 7px 7px 7px 14px;
     gap: 8px;
     border-color: rgba(255, 255, 255, 0.14);
     background: rgba(8, 8, 10, 0.72);
     box-shadow: 0 16px 34px rgba(0, 0, 0, 0.42);
+  }
+
+  .brand {
+    flex: 0 0 auto;
   }
 
   .brand-mark {
@@ -1166,6 +1187,8 @@ h3 {
   }
 
   .header-actions {
+    flex: 0 0 auto;
+    margin-left: auto;
     gap: 8px;
   }
 
@@ -1179,13 +1202,7 @@ h3 {
   }
 
   .agency-link {
-    width: 36px;
-    height: 36px;
-  }
-
-  .agency-link img {
-    width: 23px;
-    height: 23px;
+    display: none;
   }
 
   .hero {
@@ -1224,6 +1241,8 @@ h3 {
 
   .hero-content {
     display: flex;
+    width: 100%;
+    min-width: 0;
     min-height: calc(100svh - 144px);
     flex-direction: column;
     justify-content: flex-end;
@@ -1236,14 +1255,14 @@ h3 {
   }
 
   h1 {
-    max-width: 9ch;
+    max-width: 100%;
     margin-bottom: 18px;
-    font-size: clamp(4.2rem, 22vw, 6.6rem);
-    line-height: 0.78;
+    font-size: clamp(3.7rem, 17vw, 4.8rem);
+    line-height: 0.82;
   }
 
   .hero-lead {
-    max-width: 26rem;
+    max-width: 100%;
     margin-bottom: 20px;
     color: rgba(255, 255, 255, 0.78);
     font-size: 0.98rem;
@@ -1269,35 +1288,57 @@ h3 {
     background: transparent;
     color: rgba(255, 255, 255, 0.86);
     font-family: "Barlow Condensed", "Inter", sans-serif;
-    font-size: 1rem;
+    font-size: clamp(0.86rem, 3.8vw, 1rem);
     font-weight: 800;
-    line-height: 1;
+    line-height: 1.08;
     letter-spacing: 0.03em;
     text-transform: uppercase;
+    overflow-wrap: anywhere;
     backdrop-filter: none;
   }
 
-  .hero-tags span:nth-child(odd) {
+  .hero-tags span:nth-child(3),
+  .hero-tags span:nth-child(4) {
+    grid-column: 1 / -1;
+  }
+
+  .hero-tags span:nth-child(odd),
+  .hero-tags span:nth-child(4) {
+    border-right: 0;
+  }
+
+  .hero-tags span:nth-child(1) {
     border-right: 1px solid rgba(255, 255, 255, 0.12);
   }
 
-  .hero-tags span:nth-child(n + 3) {
+  .hero-tags span:nth-child(n + 3),
+  .hero-tags span:nth-child(4) {
     border-top: 1px solid rgba(255, 255, 255, 0.12);
   }
 
   .hero-actions {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    width: min(100%, calc(100vw - 40px));
+    max-width: calc(100vw - 40px);
     gap: 10px;
     margin-top: 18px;
+    overflow: hidden;
+  }
+
+  .hero-actions a {
+    flex: 1 1 0;
+    min-width: 0;
+    white-space: nowrap;
   }
 
   .primary-button,
   .secondary-button {
     min-height: 46px;
-    padding: 0 14px;
+    padding: 0 10px;
     border-radius: 0;
-    font-size: 0.78rem;
+    font-size: 0.72rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
     text-transform: uppercase;
   }
 
@@ -1308,6 +1349,10 @@ h3 {
 
   .secondary-button {
     background: rgba(255, 255, 255, 0.02);
+  }
+
+  .secondary-button::after {
+    content: none;
   }
 
   .status-strip,

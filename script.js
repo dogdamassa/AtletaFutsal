@@ -166,6 +166,16 @@ const translations = {
 const languageButtons = document.querySelectorAll(".lang-button");
 const translatedNodes = document.querySelectorAll("[data-i18n]");
 
+// Header vira barra sólida ao sair do topo (evita conflito visual com as fotos).
+const siteHeader = document.querySelector(".site-header");
+if (siteHeader) {
+  const updateHeader = () => {
+    siteHeader.classList.toggle("is-scrolled", window.scrollY > 16);
+  };
+  updateHeader();
+  window.addEventListener("scroll", updateHeader, { passive: true });
+}
+
 function setLanguage(language) {
   document.documentElement.lang = language === "it" ? "it" : "pt-BR";
 
