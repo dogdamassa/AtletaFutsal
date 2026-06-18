@@ -1,0 +1,10 @@
+# OS
+.DS_Store
+**/.DS_Store
+
+# Cópia local de distribuição (o site já está na raiz)
+public/
+
+# Dependências / Vercel
+node_modules/
+.vercel/
