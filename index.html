@@ -60,11 +60,10 @@
         </a>
 
         <nav class="nav-links" aria-label="Principal">
-          <a href="#perfil" data-i18n="navProfile">Perfil</a>
-          <a href="#numeros" data-i18n="navStats">Números</a>
-          <a href="#videos" data-i18n="navVideos">Vídeos</a>
-          <a href="#carreira" data-i18n="navCareer">Carreira</a>
+          <a href="#videos" data-i18n="navVideos">Lances</a>
+          <a href="#selecao" data-i18n="navSelection">Seleção</a>
           <a href="#titulos" data-i18n="navTitles">Títulos</a>
+          <a href="#carreira" data-i18n="navCareer">Carreira</a>
           <a href="#contato" data-i18n="navContact">Contato</a>
         </nav>
 
@@ -96,10 +95,9 @@
           <p class="eyebrow" data-i18n="heroEyebrow">Pivot italo-brasiliano</p>
           <h1>Leonardo<br />Brunelli</h1>
           <p class="hero-lead" data-i18n="heroLead">
-            Pivô de futsal na Serie A italiana e atleta convocado pela Seleção Italiana.
+            Pivô na Serie A italiana e Seleção Italiana de futsal.
           </p>
           <div class="hero-tags" aria-label="Dados principais">
-            <span data-i18n="tagBirth">19/02/1998</span>
             <span data-i18n="tagPosition">Pivot</span>
             <span data-i18n="tagIdentity">Italo-brasiliano</span>
             <span data-i18n="tagClub">Ecocity Genzano - Roma</span>
@@ -113,7 +111,7 @@
               </svg>
               <span data-i18n="instagramButton">Instagram</span>
             </a>
-            <a class="secondary-button" href="#carreira" data-i18n="careerButton">Ver carreira</a>
+            <a class="secondary-button" href="#videos" data-i18n="highlightsButton">Ver lances</a>
           </div>
         </div>
 
@@ -151,80 +149,25 @@
         </div>
       </section>
 
-      <section class="profile section-pad split" id="perfil">
-        <div class="section-copy">
-          <p class="section-kicker"><span class="idx">01</span> <span data-i18n="profileKicker">Perfil do atleta</span></p>
-          <h2 data-i18n="profileTitle">Pivô de área, jogo de costas e finalização.</h2>
-          <p data-i18n="profileText">
-            Pivô que atua de costas para o gol, protege a bola na área e finaliza em espaço curto. Serve de apoio na saída de pressão e participa da construção ofensiva da equipe.
-          </p>
-          <div class="trait-list">
-            <span data-i18n="traitOne">Proteção de bola</span>
-            <span data-i18n="traitTwo">Finalização rápida</span>
-            <span data-i18n="traitThree">Jogo de costas</span>
-            <span data-i18n="traitFour">Pressão alta</span>
-          </div>
-        </div>
-        <figure class="feature-photo">
-          <img src="assets/leo-profile.jpg" alt="Leonardo Brunelli comemorando pelo Ecocity Genzano" onerror="this.onerror=null;this.src='assets/genzano-strike.png'" />
-        </figure>
-      </section>
-
-      <section class="highlight section-pad split">
-        <figure class="highlight-image">
-          <img src="assets/champions-league.png" alt="Arte de Leonardo Brunelli na UEFA Futsal Champions League" />
-        </figure>
-        <div class="highlight-copy">
-          <p class="section-kicker"><span class="idx">02</span> <span data-i18n="momentKicker">Nível internacional</span></p>
-          <h2 data-i18n="momentTitle">Serie A, Champions League e Seleção Italiana.</h2>
-          <p data-i18n="momentText">
-            Atleta com experiência na primeira divisão do futsal italiano, em competição europeia de clubes e na Seleção Italiana de futsal.
-          </p>
-        </div>
-      </section>
-
-      <section class="stats section-pad" id="numeros">
-        <div class="section-heading">
-          <p class="section-kicker"><span class="idx">03</span> <span data-i18n="statsKicker">Números da temporada</span></p>
-          <h2 data-i18n="statsTitle">Temporada na Serie A italiana.</h2>
-        </div>
-        <div class="stats-grid">
-          <article>
-            <strong>18</strong>
-            <span data-i18n="statGoalsLabel">Gols na temporada</span>
-          </article>
-          <article>
-            <strong>11</strong>
-            <span data-i18n="statJerseyLabel">Número da camisa</span>
-          </article>
-          <article>
-            <strong>Pivot</strong>
-            <span data-i18n="statPositionLabel">Posição em quadra</span>
-          </article>
-          <article>
-            <strong>Serie A</strong>
-            <span data-i18n="statLeagueLabel">Calcio a 5 · Girone Unico</span>
-          </article>
-        </div>
-      </section>
-
+      <!-- ===================== LANCES / HIGHLIGHTS ===================== -->
       <section class="video-section section-pad" id="videos">
         <div class="section-heading video-heading">
-          <p class="section-kicker"><span class="idx">04</span> <span data-i18n="videosKicker">Highlights</span></p>
+          <p class="section-kicker"><span class="idx">01</span> <span data-i18n="videosKicker">Lances</span></p>
           <h2 data-i18n="videosTitle">Melhores momentos em quadra.</h2>
           <p data-i18n="videosText">
-            Seleção de jogadas: finalizações, jogo de pivô e participação ofensiva.
+            Finalizações, jogo de pivô e jogadas decisivas.
           </p>
         </div>
 
-        <figure class="video-showcase">
-          <img src="assets/leo-profile.jpg" alt="Leonardo Brunelli comemorando em quadra" loading="lazy" />
-          <figcaption>
-            <span>Leonardo Brunelli</span>
-            <strong>Highlights</strong>
-          </figcaption>
-        </figure>
-
+        <!--
+          COMO ADICIONAR UM NOVO LANCE:
+          1. Copie um bloco <article> abaixo e cole no fim da lista.
+          2. No <video>, aponte data-video-src e poster para o novo arquivo
+             (ex: assets/videos/highlight-09.mp4 e assets/videos/poster-09.jpg).
+          3. Troque o src da imagem .video-poster pelo mesmo poster.
+          4. Use um id único (clip-label-9) e crie a chave i18n "clipNine"
+             em PT e IT dentro de script.js (objeto translations).
+        -->
         <div class="video-grid" aria-label="Clipes individuais">
           <article>
             <div class="video-shell">
@@ -309,9 +252,172 @@
         </div>
       </section>
 
+      <!-- ===================== SELEÇÃO ITALIANA ===================== -->
+      <section class="selecao section-pad" id="selecao">
+        <div class="section-heading">
+          <p class="section-kicker"><span class="idx">02</span> <span data-i18n="selecaoKicker">Seleção Italiana</span></p>
+          <h2 data-i18n="selecaoTitle">Convocado pela Itália.</h2>
+        </div>
+
+        <div class="selecao-body">
+          <figure class="selecao-image">
+            <img src="assets/champions-league.png" alt="Leonardo Brunelli pela Seleção Italiana de futsal" />
+          </figure>
+
+          <div class="selecao-stats" aria-label="Números pela Seleção Italiana">
+            <article>
+              <!-- PREENCHER: número de convocações pela Seleção Italiana (trocar o —) -->
+              <strong data-selecao="convocacoes">—</strong>
+              <span data-i18n="selecaoCallups">Convocações</span>
+            </article>
+            <article>
+              <!-- PREENCHER: número de gols pela Seleção Italiana (trocar o —) -->
+              <strong data-selecao="gols">—</strong>
+              <span data-i18n="selecaoGoals">Gols pela seleção</span>
+            </article>
+            <article>
+              <strong>2024</strong>
+              <span data-i18n="selecaoFirst">Primeira convocação</span>
+            </article>
+          </div>
+        </div>
+
+        <!--
+          GOLS PELA SELEÇÃO — os vídeos chegam depois.
+          Para ativar um slot quando o vídeo chegar:
+          1. Remova a classe "is-soon" do .video-shell e apague o <span class="soon-badge">.
+          2. Antes da imagem .video-poster, adicione o vídeo e o botão de play:
+             <video data-video-src="assets/videos/selecao-gol-01.mp4" muted playsinline webkit-playsinline preload="none" poster="assets/videos/selecao-poster-01.jpg" aria-labelledby="goal-label-1"></video>
+             <button class="video-play-button" type="button" aria-label="Reproduzir gol pela seleção"><span aria-hidden="true"></span></button>
+          3. Troque o src da imagem .video-poster pelo poster do gol.
+        -->
+        <div class="goal-block">
+          <h3 class="goal-block-title" data-i18n="selecaoGoalsTitle">Gols pela Seleção</h3>
+          <div class="video-grid goal-grid" aria-label="Gols pela Seleção Italiana">
+            <article>
+              <div class="video-shell is-soon">
+                <img class="video-poster" src="assets/italy-cup.png" alt="" loading="lazy" />
+                <span class="soon-badge" data-i18n="comingSoon">Em breve</span>
+              </div>
+              <span data-i18n="selecaoGoalSlot">Gol pela Itália</span>
+            </article>
+            <article>
+              <div class="video-shell is-soon">
+                <img class="video-poster" src="assets/meta-action.png" alt="" loading="lazy" />
+                <span class="soon-badge" data-i18n="comingSoon">Em breve</span>
+              </div>
+              <span data-i18n="selecaoGoalSlot">Gol pela Itália</span>
+            </article>
+            <article>
+              <div class="video-shell is-soon">
+                <img class="video-poster" src="assets/genzano-strike.png" alt="" loading="lazy" />
+                <span class="soon-badge" data-i18n="comingSoon">Em breve</span>
+              </div>
+              <span data-i18n="selecaoGoalSlot">Gol pela Itália</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== TÍTULOS / VITÓRIAS ===================== -->
+      <section class="titles section-pad" id="titulos">
+        <div class="section-heading">
+          <p class="section-kicker"><span class="idx">03</span> <span data-i18n="titlesKicker">Títulos e reconhecimento</span></p>
+          <h2 data-i18n="titlesTitle">Títulos e Seleção Italiana.</h2>
+        </div>
+        <div class="titles-carousel">
+          <button
+            class="carousel-arrow carousel-prev"
+            type="button"
+            aria-label="Anterior"
+            data-i18n-aria="carouselPrev"
+          >
+            <span aria-hidden="true">&#8249;</span>
+          </button>
+          <div class="title-cards" role="group" aria-label="Títulos e conquistas">
+            <article>
+              <span>2013</span>
+              <h3 data-i18n="titleOne">Campeão Copa Regional</h3>
+            </article>
+            <article>
+              <span>2014</span>
+              <h3 data-i18n="titleFive">Artilheiro Copa Regional</h3>
+            </article>
+            <article>
+              <span>2015</span>
+              <h3 data-i18n="titleSix">Atleta revelação de Jundiaí</h3>
+            </article>
+            <article>
+              <span>2017</span>
+              <h3 data-i18n="titleTwo">Campeão Liga Paulista</h3>
+            </article>
+            <article>
+              <span>2023</span>
+              <h3 data-i18n="titleThree">Campeão Coppa Italia A2</h3>
+            </article>
+            <article>
+              <span>2024</span>
+              <h3 data-i18n="titleFour">Seleção Italiana de futsal</h3>
+            </article>
+          </div>
+          <button
+            class="carousel-arrow carousel-next"
+            type="button"
+            aria-label="Próximo"
+            data-i18n-aria="carouselNext"
+          >
+            <span aria-hidden="true">&#8250;</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="stats section-pad" id="numeros">
+        <div class="section-heading">
+          <p class="section-kicker"><span class="idx">04</span> <span data-i18n="statsKicker">Números da temporada</span></p>
+          <h2 data-i18n="statsTitle">Temporada na Serie A italiana.</h2>
+        </div>
+        <div class="stats-grid">
+          <article>
+            <strong>18</strong>
+            <span data-i18n="statGoalsLabel">Gols na temporada</span>
+          </article>
+          <article>
+            <strong>11</strong>
+            <span data-i18n="statJerseyLabel">Número da camisa</span>
+          </article>
+          <article>
+            <strong>Pivot</strong>
+            <span data-i18n="statPositionLabel">Posição em quadra</span>
+          </article>
+          <article>
+            <strong>Serie A</strong>
+            <span data-i18n="statLeagueLabel">Calcio a 5 · Girone Unico</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="profile section-pad split" id="perfil">
+        <div class="section-copy">
+          <p class="section-kicker"><span class="idx">05</span> <span data-i18n="profileKicker">Perfil do atleta</span></p>
+          <h2 data-i18n="profileTitle">Pivô de área, jogo de costas e finalização.</h2>
+          <p data-i18n="profileText">
+            Pivô de costas para o gol: protege a bola, finaliza em espaço curto e ajuda na saída de pressão.
+          </p>
+          <div class="trait-list">
+            <span data-i18n="traitOne">Proteção de bola</span>
+            <span data-i18n="traitTwo">Finalização rápida</span>
+            <span data-i18n="traitThree">Jogo de costas</span>
+            <span data-i18n="traitFour">Pressão alta</span>
+          </div>
+        </div>
+        <figure class="feature-photo">
+          <img src="assets/leo-profile.jpg" alt="Leonardo Brunelli comemorando pelo Ecocity Genzano" onerror="this.onerror=null;this.src='assets/genzano-strike.png'" />
+        </figure>
+      </section>
+
       <section class="career section-pad" id="carreira">
         <div class="section-heading">
-          <p class="section-kicker"><span class="idx">05</span> <span data-i18n="careerKicker">Trajetória</span></p>
+          <p class="section-kicker"><span class="idx">06</span> <span data-i18n="careerKicker">Trajetória</span></p>
           <h2 data-i18n="careerTitle">Brasil, Itália e seleção.</h2>
         </div>
         <ol class="timeline" aria-label="Linha do tempo da carreira">
@@ -358,39 +464,6 @@
         </ol>
       </section>
 
-      <section class="titles section-pad" id="titulos">
-        <div class="section-heading">
-          <p class="section-kicker"><span class="idx">06</span> <span data-i18n="titlesKicker">Títulos e reconhecimento</span></p>
-          <h2 data-i18n="titlesTitle">Títulos e Seleção Italiana.</h2>
-        </div>
-        <div class="title-cards">
-          <article>
-            <span>2013</span>
-            <h3 data-i18n="titleOne">Campeão Copa Regional</h3>
-          </article>
-          <article>
-            <span>2017</span>
-            <h3 data-i18n="titleTwo">Campeão Liga Paulista</h3>
-          </article>
-          <article>
-            <span>2023</span>
-            <h3 data-i18n="titleThree">Campeão Coppa Italia A2</h3>
-          </article>
-          <article>
-            <span>2024</span>
-            <h3 data-i18n="titleFour">Seleção Italiana de futsal</h3>
-          </article>
-          <article>
-            <span>2014</span>
-            <h3 data-i18n="titleFive">Artilheiro Copa Regional</h3>
-          </article>
-          <article>
-            <span>2015</span>
-            <h3 data-i18n="titleSix">Atleta revelação de Jundiaí</h3>
-          </article>
-        </div>
-      </section>
-
       <section class="gallery-section" aria-label="Galeria">
         <img src="assets/leo-celebration.jpg" alt="Leonardo Brunelli comemorando gol pelo Meta Catania em 2025/26" onerror="this.onerror=null;this.src='assets/italy-cup.png'" />
         <img src="assets/leo-profile.jpg" alt="Leonardo Brunelli em ação pelo Ecocity Genzano" onerror="this.onerror=null;this.src='assets/genzano-pass.png'" />
@@ -402,7 +475,7 @@
           <p class="section-kicker"><span class="idx">07</span> <span data-i18n="contactKicker">Representação</span></p>
           <h2 data-i18n="contactTitle">Agenciado pela WoneSports.</h2>
           <p data-i18n="contactText">
-            Para oportunidades esportivas, ativações e contato profissional, acesse a WoneSports ou acompanhe o atleta pelo Instagram.
+            Contato profissional pela WoneSports, WhatsApp ou Instagram.
           </p>
         </div>
         <div class="contact-actions">

@@ -2,7 +2,8 @@ const translations = {
   pt: {
     navProfile: "Perfil",
     navStats: "Números",
-    navVideos: "Vídeos",
+    navVideos: "Lances",
+    navSelection: "Seleção",
     navCareer: "Carreira",
     navTitles: "Títulos",
     navContact: "Contato",
@@ -21,6 +22,7 @@ const translations = {
     instagramButton: "Instagram",
     whatsappButton: "WhatsApp",
     careerButton: "Ver carreira",
+    highlightsButton: "Ver lances",
     statusAgeValue: "28",
     statusAge: "anos",
     statusPosition: "camisa · pivô",
@@ -30,7 +32,7 @@ const translations = {
     profileKicker: "Perfil do atleta",
     profileTitle: "Pivô de área, jogo de costas e finalização.",
     profileText:
-      "Pivô que atua de costas para o gol, protege a bola na área e finaliza em espaço curto. Serve de apoio na saída de pressão e participa da construção ofensiva da equipe.",
+      "Pivô de costas para o gol: protege a bola, finaliza em espaço curto e ajuda na saída de pressão.",
     traitOne: "Proteção de bola",
     traitTwo: "Finalização rápida",
     traitThree: "Jogo de costas",
@@ -45,10 +47,18 @@ const translations = {
     statJerseyLabel: "Número da camisa",
     statPositionLabel: "Posição em quadra",
     statLeagueLabel: "Calcio a 5 · Girone Unico",
-    videosKicker: "Highlights",
+    videosKicker: "Lances",
     videosTitle: "Melhores momentos em quadra.",
     videosText:
-      "Seleção de jogadas: finalizações, jogo de pivô e participação ofensiva.",
+      "Finalizações, jogo de pivô e jogadas decisivas.",
+    selecaoKicker: "Seleção Italiana",
+    selecaoTitle: "Convocado pela Itália.",
+    selecaoCallups: "Convocações",
+    selecaoGoals: "Gols pela seleção",
+    selecaoFirst: "Primeira convocação",
+    selecaoGoalsTitle: "Gols pela Seleção",
+    selecaoGoalSlot: "Gol pela Itália",
+    comingSoon: "Em breve",
     clipOne: "Ataque ao espaço",
     clipTwo: "Jogo de pivô",
     clipThree: "Finalização",
@@ -75,15 +85,18 @@ const translations = {
     titleFour: "Seleção Italiana de futsal",
     titleFive: "Artilheiro Copa Regional",
     titleSix: "Atleta revelação de Jundiaí",
+    carouselPrev: "Ver títulos anteriores",
+    carouselNext: "Ver próximos títulos",
     contactKicker: "Representação",
     contactTitle: "Agenciado pela WoneSports.",
     contactText:
-      "Para oportunidades esportivas, ativações e contato profissional, fale pelo WhatsApp ou acesse a WoneSports e o Instagram do atleta."
+      "Contato profissional pela WoneSports, WhatsApp ou Instagram."
   },
   it: {
     navProfile: "Profilo",
     navStats: "Numeri",
     navVideos: "Video",
+    navSelection: "Nazionale",
     navCareer: "Carriera",
     navTitles: "Titoli",
     navContact: "Contatti",
@@ -102,6 +115,7 @@ const translations = {
     instagramButton: "Instagram",
     whatsappButton: "WhatsApp",
     careerButton: "Vedi carriera",
+    highlightsButton: "Vedi video",
     statusAgeValue: "28",
     statusAge: "anni",
     statusPosition: "maglia · pivot",
@@ -111,7 +125,7 @@ const translations = {
     profileKicker: "Profilo atleta",
     profileTitle: "Pivot d'area, gioco spalle alla porta e finalizzazione.",
     profileText:
-      "Pivot che gioca spalle alla porta, protegge palla in area e finalizza in spazi stretti. Fa da appoggio nell'uscita dalla pressione e partecipa alla costruzione offensiva della squadra.",
+      "Pivot spalle alla porta: protegge palla, finalizza in spazi stretti e aiuta nell'uscita dalla pressione.",
     traitOne: "Protezione palla",
     traitTwo: "Finalizzazione rapida",
     traitThree: "Gioco spalle alla porta",
@@ -156,6 +170,8 @@ const translations = {
     titleFour: "Nazionale italiana futsal",
     titleFive: "Capocannoniere Copa Regional",
     titleSix: "Atleta rivelazione di Jundiaí",
+    carouselPrev: "Vedi titoli precedenti",
+    carouselNext: "Vedi titoli successivi",
     contactKicker: "Rappresentanza",
     contactTitle: "Rappresentato da WoneSports.",
     contactText:
@@ -275,3 +291,116 @@ document.querySelectorAll(".video-shell").forEach((shell) => {
 });
 
 setLanguage("pt");
+
+/* ============ CARROSSEL DE TÍTULOS ============
+   Rola na horizontal por arraste/swipe; as setas avançam um "passo"
+   (largura visível) e ficam desabilitadas nas extremidades. */
+document.querySelectorAll(".titles-carousel").forEach((carousel) => {
+  const track = carousel.querySelector(".title-cards");
+  const prev = carousel.querySelector(".carousel-prev");
+  const next = carousel.querySelector(".carousel-next");
+  if (!track || !prev || !next) return;
+
+  const step = () => {
+    const card = track.querySelector("article");
+    const gap = parseFloat(getComputedStyle(track).columnGap) || 14;
+    const cardWidth = card ? card.offsetWidth + gap : track.clientWidth * 0.8;
+    // Avança quase a faixa visível, mantendo um card de referência à vista.
+    return Math.max(cardWidth, track.clientWidth - cardWidth);
+  };
+
+  const updateArrows = () => {
+    const maxScroll = track.scrollWidth - track.clientWidth - 1;
+    prev.disabled = track.scrollLeft <= 0;
+    next.disabled = track.scrollLeft >= maxScroll;
+  };
+
+  prev.addEventListener("click", () => {
+    track.scrollBy({ left: -step(), behavior: "smooth" });
+  });
+  next.addEventListener("click", () => {
+    track.scrollBy({ left: step(), behavior: "smooth" });
+  });
+
+  track.addEventListener("scroll", updateArrows, { passive: true });
+  window.addEventListener("resize", updateArrows, { passive: true });
+  updateArrows();
+});
+
+/* ============ SCROLL REVEAL + COUNT-UP ============
+   Entrada suave das seções e contagem animada dos números.
+   A classe .reveal é adicionada via JS: sem JS, nada fica escondido.
+   Respeita "prefers-reduced-motion". */
+const prefersReducedMotion = window.matchMedia(
+  "(prefers-reduced-motion: reduce)"
+).matches;
+
+if (!prefersReducedMotion && "IntersectionObserver" in window) {
+  // Números a animar (apenas inteiros puros: 18, 11, 28, 2024...)
+  const counters = new Map();
+  document
+    .querySelectorAll(".stats-grid strong, .status-strip strong")
+    .forEach((el) => {
+      const raw = el.textContent.trim();
+      if (/^\d+$/.test(raw)) {
+        counters.set(el, parseInt(raw, 10));
+        el.textContent = "0";
+      }
+    });
+
+  const animateCount = (el, target) => {
+    const duration = 1100;
+    const ease = (t) => 1 - Math.pow(1 - t, 3);
+    let startTime = null;
+    const step = (now) => {
+      if (startTime === null) startTime = now;
+      const progress = Math.min((now - startTime) / duration, 1);
+      el.textContent = String(Math.round(ease(progress) * target));
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  };
+
+  // Alvos do reveal (com leve atraso escalonado nos grupos)
+  const revealTargets = [];
+  const addReveal = (selector, stagger) => {
+    document.querySelectorAll(selector).forEach((el, i) => {
+      el.classList.add("reveal");
+      if (stagger) el.style.transitionDelay = `${Math.min(i, 6) * 70}ms`;
+      revealTargets.push(el);
+    });
+  };
+
+  addReveal(".section-heading");
+  addReveal(".split > *", true);
+  addReveal(".selecao-image");
+  addReveal(".selecao-stats article", true);
+  addReveal(".status-strip > div", true);
+  addReveal(".stats-grid article", true);
+  addReveal(".video-showcase");
+  addReveal(".video-grid article", true);
+  addReveal(".timeline li", true);
+  addReveal(".title-cards article", true);
+  addReveal(".gallery-section img", true);
+  addReveal(".contact-section > div", true);
+
+  const observer = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        el.classList.add("is-visible");
+        el.querySelectorAll("strong").forEach((strong) => {
+          if (counters.has(strong)) {
+            animateCount(strong, counters.get(strong));
+            counters.delete(strong);
+          }
+        });
+        obs.unobserve(el);
+      });
+    },
+    { threshold: 0.18, rootMargin: "0px 0px -8% 0px" }
+  );
+
+  revealTargets.forEach((el) => observer.observe(el));
+}
