@@ -7,8 +7,13 @@ const translations = {
     navTitles: "Títulos",
     navContact: "Contato",
     heroEyebrow: "Pivot italo-brasiliano",
+    heroWatermark: "Pivot",
     heroLead:
-      "Nascido no Brasil, formado para competir na Itália: potência de pivô, leitura de jogo e presença decisiva no último terço da quadra.",
+      "Pivô de futsal na Serie A italiana e atleta convocado pela Seleção Italiana.",
+    heroCardKicker: "Nível internacional",
+    heroCardText:
+      "Serie A italiana, UEFA Futsal Champions League e Seleção Italiana de futsal.",
+    heroCardRole: "Pivô · Serie A",
     tagBirth: "19/02/1998",
     tagPosition: "Pivot",
     tagIdentity: "Italo-brasiliano",
@@ -18,36 +23,32 @@ const translations = {
     careerButton: "Ver carreira",
     statusAgeValue: "28",
     statusAge: "anos",
+    statusPosition: "camisa · pivô",
     statusSelectionValue: "2024",
-    statusSelection: "Seleção Italiana de futsal",
-    statusChampion: "campeão italiano",
-    statusReturn: "retorno a Roma",
+    statusSelection: "Seleção Italiana",
+    statusLeague: "futsal italiano",
     profileKicker: "Perfil do atleta",
-    profileTitle: "Um pivô de área, pressão e decisão.",
+    profileTitle: "Pivô de área, jogo de costas e finalização.",
     profileText:
-      "Leonardo Brunelli une a intensidade do futsal brasileiro com a disciplina competitiva italiana. Atua como referência ofensiva, protege bem a bola, ataca espaços curtos e oferece solução constante para saídas sob pressão.",
+      "Pivô que atua de costas para o gol, protege a bola na área e finaliza em espaço curto. Serve de apoio na saída de pressão e participa da construção ofensiva da equipe.",
     traitOne: "Proteção de bola",
     traitTwo: "Finalização rápida",
     traitThree: "Jogo de costas",
     traitFour: "Pressão alta",
-    momentKicker: "Momento competitivo",
-    momentTitle: "Do Meta Catania campeão ao retorno para Genzano.",
+    momentKicker: "Nível internacional",
+    momentTitle: "Serie A, Champions League e Seleção Italiana.",
     momentText:
-      "Após passagem pelo Meta Catania, atual campeão italiano, Brunelli retorna ao Ecocity Genzano, em Roma, levando experiência internacional, presença de seleção e histórico vencedor.",
+      "Atleta com experiência na primeira divisão do futsal italiano, em competição europeia de clubes e na Seleção Italiana de futsal.",
     statsKicker: "Números da temporada",
-    statsTitle: "Presença decisiva na Serie A italiana.",
+    statsTitle: "Temporada na Serie A italiana.",
     statGoalsLabel: "Gols na temporada",
     statJerseyLabel: "Número da camisa",
     statPositionLabel: "Posição em quadra",
     statLeagueLabel: "Calcio a 5 · Girone Unico",
     videosKicker: "Highlights",
-    videosTitle: "Jogadas que mostram presença, decisão e leitura.",
+    videosTitle: "Melhores momentos em quadra.",
     videosText:
-      "Um recorte visual das ações de Brunelli: ataque ao espaço, jogo de pivô, participação ofensiva e finalização em ritmo competitivo.",
-    reelLabel: "Reel institucional",
-    reelTitle: "Brunelli em ação",
-    reelText: "Sequência automática com os principais clipes, sem som, pronta para apresentação profissional.",
-    reelAria: "Reel de highlights de Leonardo Brunelli, sem áudio",
+      "Seleção de jogadas: finalizações, jogo de pivô e participação ofensiva.",
     clipOne: "Ataque ao espaço",
     clipTwo: "Jogo de pivô",
     clipThree: "Finalização",
@@ -58,16 +59,16 @@ const translations = {
     clipEight: "Momento decisivo",
     careerKicker: "Trajetória",
     careerTitle: "Brasil, Itália e seleção.",
-    careerOne: "Primeiros anos de formação no Brasil.",
-    careerTwo: "Base competitiva e evolução técnica.",
-    careerThree: "Passagem por projetos fortes do futsal paulista.",
-    careerFour: "Chegada ao futsal italiano.",
-    careerFive: "Consolidação no cenário italiano.",
-    careerSix: "Temporada em Roma com protagonismo ofensivo.",
-    careerSeven: "Passagem pelo clube campeão italiano.",
-    careerEight: "Retorno ao clube de Roma.",
+    careerOne: "Brasil",
+    careerTwo: "Brasil",
+    careerThree: "Brasil",
+    careerFour: "Itália",
+    careerFive: "Itália",
+    careerSix: "Itália",
+    careerSeven: "Itália",
+    careerEight: "Itália",
     titlesKicker: "Títulos e reconhecimento",
-    titlesTitle: "Histórico de vitórias, evolução e seleção.",
+    titlesTitle: "Títulos e Seleção Italiana.",
     titleOne: "Campeão Copa Regional",
     titleTwo: "Campeão Liga Paulista",
     titleThree: "Campeão Coppa Italia A2",
@@ -87,8 +88,13 @@ const translations = {
     navTitles: "Titoli",
     navContact: "Contatti",
     heroEyebrow: "Pivot italo-brasiliano",
+    heroWatermark: "Pivot",
     heroLead:
-      "Nato in Brasile e cresciuto per competere in Italia: forza da pivot, lettura del gioco e presenza decisiva negli ultimi metri.",
+      "Pivot di futsal nella Serie A italiana e giocatore convocato dalla Nazionale italiana.",
+    heroCardKicker: "Livello internazionale",
+    heroCardText:
+      "Serie A italiana, UEFA Futsal Champions League e Nazionale italiana di futsal.",
+    heroCardRole: "Pivot · Serie A",
     tagBirth: "19/02/1998",
     tagPosition: "Pivot",
     tagIdentity: "Italo-brasiliano",
@@ -98,36 +104,32 @@ const translations = {
     careerButton: "Vedi carriera",
     statusAgeValue: "28",
     statusAge: "anni",
+    statusPosition: "maglia · pivot",
     statusSelectionValue: "2024",
-    statusSelection: "Nazionale italiana futsal",
-    statusChampion: "campione d'Italia",
-    statusReturn: "ritorno a Roma",
+    statusSelection: "Nazionale italiana",
+    statusLeague: "futsal italiano",
     profileKicker: "Profilo atleta",
-    profileTitle: "Un pivot di area, pressione e decisione.",
+    profileTitle: "Pivot d'area, gioco spalle alla porta e finalizzazione.",
     profileText:
-      "Leonardo Brunelli unisce l'intensità del futsal brasiliano alla disciplina competitiva italiana. Gioca da riferimento offensivo, protegge bene palla, attacca gli spazi stretti e offre soluzioni costanti contro la pressione.",
+      "Pivot che gioca spalle alla porta, protegge palla in area e finalizza in spazi stretti. Fa da appoggio nell'uscita dalla pressione e partecipa alla costruzione offensiva della squadra.",
     traitOne: "Protezione palla",
     traitTwo: "Finalizzazione rapida",
     traitThree: "Gioco spalle alla porta",
     traitFour: "Pressione alta",
-    momentKicker: "Momento competitivo",
-    momentTitle: "Dal Meta Catania campione al ritorno a Genzano.",
+    momentKicker: "Livello internazionale",
+    momentTitle: "Serie A, Champions League e Nazionale italiana.",
     momentText:
-      "Dopo l'esperienza al Meta Catania, attuale campione d'Italia, Brunelli torna all'Ecocity Genzano, a Roma, portando esperienza internazionale, presenza in Nazionale e mentalità vincente.",
+      "Giocatore con esperienza nella massima divisione del futsal italiano, nelle competizioni europee per club e nella Nazionale italiana di futsal.",
     statsKicker: "Numeri della stagione",
-    statsTitle: "Presenza decisiva nella Serie A italiana.",
+    statsTitle: "Stagione nella Serie A italiana.",
     statGoalsLabel: "Gol in stagione",
     statJerseyLabel: "Numero di maglia",
     statPositionLabel: "Ruolo in campo",
     statLeagueLabel: "Calcio a 5 · Girone Unico",
     videosKicker: "Highlights",
-    videosTitle: "Azioni che mostrano presenza, decisione e lettura.",
+    videosTitle: "I migliori momenti in campo.",
     videosText:
-      "Una selezione visiva delle giocate di Brunelli: attacco dello spazio, gioco da pivot, partecipazione offensiva e finalizzazione in ritmo gara.",
-    reelLabel: "Reel istituzionale",
-    reelTitle: "Brunelli in azione",
-    reelText: "Sequenza automatica con le clip principali, senza audio, pronta per una presentazione professionale.",
-    reelAria: "Reel di highlights di Leonardo Brunelli, senza audio",
+      "Selezione di giocate: finalizzazioni, gioco da pivot e partecipazione offensiva.",
     clipOne: "Attacco dello spazio",
     clipTwo: "Gioco da pivot",
     clipThree: "Finalizzazione",
@@ -138,16 +140,16 @@ const translations = {
     clipEight: "Momento decisivo",
     careerKicker: "Percorso",
     careerTitle: "Brasile, Italia e Nazionale.",
-    careerOne: "Primi anni di formazione in Brasile.",
-    careerTwo: "Base competitiva e crescita tecnica.",
-    careerThree: "Esperienze in progetti importanti del futsal paulista.",
-    careerFour: "Arrivo nel futsal italiano.",
-    careerFive: "Consolidamento nel panorama italiano.",
-    careerSix: "Stagione a Roma con protagonismo offensivo.",
-    careerSeven: "Esperienza nel club campione d'Italia.",
-    careerEight: "Ritorno al club di Roma.",
+    careerOne: "Brasile",
+    careerTwo: "Brasile",
+    careerThree: "Brasile",
+    careerFour: "Italia",
+    careerFive: "Italia",
+    careerSix: "Italia",
+    careerSeven: "Italia",
+    careerEight: "Italia",
     titlesKicker: "Titoli e riconoscimenti",
-    titlesTitle: "Vittorie, crescita e Nazionale.",
+    titlesTitle: "Titoli e Nazionale italiana.",
     titleOne: "Campione Copa Regional",
     titleTwo: "Campione Liga Paulista",
     titleThree: "Campione Coppa Italia A2",
@@ -163,31 +165,22 @@ const translations = {
 
 const languageButtons = document.querySelectorAll(".lang-button");
 const translatedNodes = document.querySelectorAll("[data-i18n]");
-const reel = document.querySelector("#highlightReel");
-const reelButtons = document.querySelectorAll("[data-video-index]");
-const highlightVideos = [
-  "assets/videos/highlight-01.mp4",
-  "assets/videos/highlight-02.mp4",
-  "assets/videos/highlight-03.mp4",
-  "assets/videos/highlight-04.mp4",
-  "assets/videos/highlight-05.mp4",
-  "assets/videos/highlight-06.mp4",
-  "assets/videos/highlight-07.mp4",
-  "assets/videos/highlight-08.mp4"
-];
-let activeVideo = 0;
-const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 function setLanguage(language) {
   document.documentElement.lang = language === "it" ? "it" : "pt-BR";
 
   translatedNodes.forEach((node) => {
     const key = node.dataset.i18n;
-    node.textContent = translations[language][key];
+    if (translations[language][key]) {
+      node.textContent = translations[language][key];
+    }
   });
 
   document.querySelectorAll("[data-i18n-aria]").forEach((node) => {
-    node.setAttribute("aria-label", translations[language][node.dataset.i18nAria]);
+    const label = translations[language][node.dataset.i18nAria];
+    if (label) {
+      node.setAttribute("aria-label", label);
+    }
   });
 
   languageButtons.forEach((button) => {
@@ -201,42 +194,73 @@ languageButtons.forEach((button) => {
   button.addEventListener("click", () => setLanguage(button.dataset.lang));
 });
 
-function setActiveVideo(index, shouldPlay = true) {
-  if (!reel) return;
-
-  activeVideo = (index + highlightVideos.length) % highlightVideos.length;
-  reel.src = highlightVideos[activeVideo];
-  reel.muted = true;
-  reelButtons.forEach((button) => {
-    const isActive = Number(button.dataset.videoIndex) === activeVideo;
-    button.classList.toggle("is-active", isActive);
-    button.setAttribute("aria-pressed", String(isActive));
-  });
-
-  if (shouldPlay) {
-    reel.play().catch(() => {});
-  }
+function getVideoShell(video) {
+  return video.closest(".video-shell");
 }
 
-reelButtons.forEach((button) => {
-  button.addEventListener("click", () => setActiveVideo(Number(button.dataset.videoIndex)));
-});
-
-if (reel) {
-  if (!reduceMotion) {
-    reel.addEventListener("ended", () => setActiveVideo(activeVideo + 1));
-    reel.play().catch(() => {});
-  }
-  reel.addEventListener("play", () => {
-    document.querySelectorAll(".video-grid video").forEach((video) => {
+function pauseOtherVideos(currentVideo) {
+  document.querySelectorAll("video").forEach((video) => {
+    if (video !== currentVideo) {
       video.pause();
-    });
+    }
   });
 }
 
-document.querySelectorAll(".video-grid video").forEach((video) => {
+function loadVideo(video) {
+  if (!video.dataset.videoSrc) return;
+
+  if (!video.getAttribute("src")) {
+    video.src = video.dataset.videoSrc;
+    video.load();
+  }
+}
+
+function syncVideoState(video) {
+  const shell = getVideoShell(video);
+  if (!shell) return;
+
+  shell.classList.toggle("is-playing", !video.paused && !video.ended);
+}
+
+async function playVideo(video) {
+  const shell = getVideoShell(video);
+  pauseOtherVideos(video);
+  loadVideo(video);
+
+  video.muted = true;
+  video.controls = true;
+  shell?.classList.add("is-loading");
+
+  try {
+    await video.play();
+    shell?.classList.add("is-ready", "is-playing");
+  } catch (error) {
+    video.controls = true;
+  } finally {
+    shell?.classList.remove("is-loading");
+  }
+}
+
+document.querySelectorAll(".video-shell").forEach((shell) => {
+  const video = shell.querySelector("video");
+  const playButton = shell.querySelector(".video-play-button");
+
+  if (!video || !playButton) return;
+
+  playButton.addEventListener("click", () => playVideo(video));
+
+  video.addEventListener("loadeddata", () => {
+    shell.classList.add("is-ready");
+  });
+
   video.addEventListener("play", () => {
-    if (reel) reel.pause();
+    shell.classList.add("is-ready", "is-playing");
+  });
+
+  video.addEventListener("pause", () => syncVideoState(video));
+
+  video.addEventListener("ended", () => {
+    shell.classList.remove("is-playing");
   });
 });
 

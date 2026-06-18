@@ -8,3 +8,8 @@ public/
 # Dependências / Vercel
 node_modules/
 .vercel/
+.vercel
+
+# Artefatos de preview do editor
+.preview/
+__preview.html
