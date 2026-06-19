@@ -899,7 +899,7 @@ h3 {
 
 .selecao-image img {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 1916 / 821;
   object-fit: cover;
 }
 
@@ -1267,6 +1267,7 @@ h3 {
 
 @media (max-width: 860px) {
   .split,
+  .selecao-body,
   .contact-section {
     grid-template-columns: 1fr;
   }
