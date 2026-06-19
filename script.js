@@ -30,13 +30,14 @@ const translations = {
     statusSelection: "Seleção Italiana",
     statusLeague: "futsal italiano",
     profileKicker: "Perfil do atleta",
-    profileTitle: "Pivô de área, jogo de costas e finalização.",
+    profileTitle: "Pivô de referência, artilheiro nato e versátil.",
     profileText:
-      "Pivô de costas para o gol: protege a bola, finaliza em espaço curto e ajuda na saída de pressão.",
-    traitOne: "Proteção de bola",
-    traitTwo: "Finalização rápida",
-    traitThree: "Jogo de costas",
-    traitFour: "Pressão alta",
+      "Um verdadeiro bomber, destaca-se pelo faro de gol, pela qualidade na finalização e pela presença ofensiva. Além de atuar como pivô, possui versatilidade para jogar pelas alas ou como último homem, adaptando-se às diferentes necessidades da equipe.",
+    traitOne: "Finalização",
+    traitTwo: "Faro de gol",
+    traitThree: "Versatilidade tática",
+    traitFour: "Presença ofensiva",
+    traitFive: "Inteligência de jogo",
     momentKicker: "Nível internacional",
     momentTitle: "Serie A, Champions League e Seleção Italiana.",
     momentText:
@@ -123,13 +124,14 @@ const translations = {
     statusSelection: "Nazionale italiana",
     statusLeague: "futsal italiano",
     profileKicker: "Profilo atleta",
-    profileTitle: "Pivot d'area, gioco spalle alla porta e finalizzazione.",
+    profileTitle: "Pivot di riferimento, bomber nato e versatile.",
     profileText:
-      "Pivot spalle alla porta: protegge palla, finalizza in spazi stretti e aiuta nell'uscita dalla pressione.",
-    traitOne: "Protezione palla",
-    traitTwo: "Finalizzazione rapida",
-    traitThree: "Gioco spalle alla porta",
-    traitFour: "Pressione alta",
+      "Un vero bomber, si distingue per il fiuto del gol, la qualità in finalizzazione e la presenza offensiva. Oltre a giocare da pivot, ha la versatilità per agire sulle fasce o da ultimo uomo, adattandosi alle diverse esigenze della squadra.",
+    traitOne: "Finalizzazione",
+    traitTwo: "Fiuto del gol",
+    traitThree: "Versatilità tattica",
+    traitFour: "Presenza offensiva",
+    traitFive: "Intelligenza di gioco",
     momentKicker: "Livello internazionale",
     momentTitle: "Serie A, Champions League e Nazionale italiana.",
     momentText:
@@ -143,7 +145,15 @@ const translations = {
     videosKicker: "Highlights",
     videosTitle: "I migliori momenti in campo.",
     videosText:
-      "Selezione di giocate: finalizzazioni, gioco da pivot e partecipazione offensiva.",
+      "Finalizzazioni, gioco da pivot e giocate decisive.",
+    selecaoKicker: "Nazionale italiana",
+    selecaoTitle: "Convocato dall'Italia.",
+    selecaoCallups: "Convocazioni",
+    selecaoGoals: "Gol in Nazionale",
+    selecaoFirst: "Prima convocazione",
+    selecaoGoalsTitle: "Gol in Nazionale",
+    selecaoGoalSlot: "Gol con l'Italia",
+    comingSoon: "In arrivo",
     clipOne: "Attacco dello spazio",
     clipTwo: "Gioco da pivot",
     clipThree: "Finalizzazione",
@@ -175,7 +185,7 @@ const translations = {
     contactKicker: "Rappresentanza",
     contactTitle: "Rappresentato da WoneSports.",
     contactText:
-      "Per opportunità sportive, attivazioni e contatti professionali, scrivi su WhatsApp o visita WoneSports e l'Instagram dell'atleta."
+      "Contatti professionali tramite WoneSports, WhatsApp o Instagram."
   }
 };
 
