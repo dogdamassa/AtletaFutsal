@@ -60,9 +60,9 @@
         </a>
 
         <nav class="nav-links" aria-label="Principal">
-          <a href="#videos" data-i18n="navVideos">Lances</a>
-          <a href="#selecao" data-i18n="navSelection">Seleção</a>
+          <a href="#champions" data-i18n="navSelection">Champions</a>
           <a href="#titulos" data-i18n="navTitles">Títulos</a>
+          <a href="#videos" data-i18n="navVideos">Lances</a>
           <a href="#carreira" data-i18n="navCareer">Carreira</a>
           <a href="#contato" data-i18n="navContact">Contato</a>
         </nav>
@@ -149,180 +149,24 @@
         </div>
       </section>
 
-      <!-- ===================== LANCES / HIGHLIGHTS ===================== -->
-      <section class="video-section section-pad" id="videos">
-        <div class="section-heading video-heading">
-          <p class="section-kicker"><span class="idx">01</span> <span data-i18n="videosKicker">Lances</span></p>
-          <h2 data-i18n="videosTitle">Melhores momentos em quadra.</h2>
-          <p data-i18n="videosText">
-            Finalizações, jogo de pivô e jogadas decisivas.
+      <!-- ===================== CHAMPIONS LEAGUE ===================== -->
+      <section class="selecao section-pad split" id="champions">
+        <figure class="selecao-image">
+          <img src="assets/champions-league.png" alt="Leonardo Brunelli na UEFA Futsal Champions League pelo Meta Catania" />
+        </figure>
+        <div class="section-copy">
+          <p class="section-kicker"><span class="idx">01</span> <span data-i18n="championsKicker">Nível internacional</span></p>
+          <h2 data-i18n="championsTitle">UEFA Futsal Champions League.</h2>
+          <p data-i18n="championsText">
+            Participação na UEFA Futsal Champions League pelo Meta Catania, atual campeão italiano de futsal.
           </p>
-        </div>
-
-        <!--
-          COMO ADICIONAR UM NOVO LANCE:
-          1. Copie um bloco <article> abaixo e cole no fim da lista.
-          2. No <video>, aponte data-video-src e poster para o novo arquivo
-             (ex: assets/videos/highlight-09.mp4 e assets/videos/poster-09.jpg).
-          3. Troque o src da imagem .video-poster pelo mesmo poster.
-          4. Use um id único (clip-label-9) e crie a chave i18n "clipNine"
-             em PT e IT dentro de script.js (objeto translations).
-        -->
-        <div class="video-grid" aria-label="Clipes individuais">
-          <article>
-            <div class="video-shell">
-              <video data-video-src="assets/videos/highlight-01.mp4" muted playsinline webkit-playsinline preload="none" poster="assets/videos/poster-01.jpg" aria-labelledby="clip-label-1"></video>
-              <img class="video-poster" src="assets/videos/poster-01.jpg" alt="" loading="lazy" />
-              <button class="video-play-button" type="button" aria-label="Reproduzir ataque ao espaço">
-                <span aria-hidden="true"></span>
-              </button>
-            </div>
-            <span id="clip-label-1" data-i18n="clipOne">Ataque ao espaço</span>
-          </article>
-          <article>
-            <div class="video-shell">
-              <video data-video-src="assets/videos/highlight-02.mp4" muted playsinline webkit-playsinline preload="none" poster="assets/videos/poster-02.jpg" aria-labelledby="clip-label-2"></video>
-              <img class="video-poster" src="assets/videos/poster-02.jpg" alt="" loading="lazy" />
-              <button class="video-play-button" type="button" aria-label="Reproduzir jogo de pivô">
-                <span aria-hidden="true"></span>
-              </button>
-            </div>
-            <span id="clip-label-2" data-i18n="clipTwo">Jogo de pivô</span>
-          </article>
-          <article>
-            <div class="video-shell">
-              <video data-video-src="assets/videos/highlight-03.mp4" muted playsinline webkit-playsinline preload="none" poster="assets/videos/poster-03.jpg" aria-labelledby="clip-label-3"></video>
-              <img class="video-poster" src="assets/videos/poster-03.jpg" alt="" loading="lazy" />
-              <button class="video-play-button" type="button" aria-label="Reproduzir finalização">
-                <span aria-hidden="true"></span>
-              </button>
-            </div>
-            <span id="clip-label-3" data-i18n="clipThree">Finalização</span>
-          </article>
-          <article>
-            <div class="video-shell">
-              <video data-video-src="assets/videos/highlight-04.mp4" muted playsinline webkit-playsinline preload="none" poster="assets/videos/poster-04.jpg" aria-labelledby="clip-label-4"></video>
-              <img class="video-poster" src="assets/videos/poster-04.jpg" alt="" loading="lazy" />
-              <button class="video-play-button" type="button" aria-label="Reproduzir construção ofensiva">
-                <span aria-hidden="true"></span>
-              </button>
-            </div>
-            <span id="clip-label-4" data-i18n="clipFour">Construção ofensiva</span>
-          </article>
-          <article>
-            <div class="video-shell">
-              <video data-video-src="assets/videos/highlight-05.mp4" muted playsinline webkit-playsinline preload="none" poster="assets/videos/poster-05.jpg" aria-labelledby="clip-label-5"></video>
-              <img class="video-poster" src="assets/videos/poster-05.jpg" alt="" loading="lazy" />
-              <button class="video-play-button" type="button" aria-label="Reproduzir pressão e intensidade">
-                <span aria-hidden="true"></span>
-              </button>
-            </div>
-            <span id="clip-label-5" data-i18n="clipFive">Pressão e intensidade</span>
-          </article>
-          <article>
-            <div class="video-shell">
-              <video data-video-src="assets/videos/highlight-06.mp4" muted playsinline webkit-playsinline preload="none" poster="assets/videos/poster-06.jpg" aria-labelledby="clip-label-6"></video>
-              <img class="video-poster" src="assets/videos/poster-06.jpg" alt="" loading="lazy" />
-              <button class="video-play-button" type="button" aria-label="Reproduzir presença na área">
-                <span aria-hidden="true"></span>
-              </button>
-            </div>
-            <span id="clip-label-6" data-i18n="clipSix">Presença na área</span>
-          </article>
-          <article>
-            <div class="video-shell">
-              <video data-video-src="assets/videos/highlight-07.mp4" muted playsinline webkit-playsinline preload="none" poster="assets/videos/poster-07.jpg" aria-labelledby="clip-label-7"></video>
-              <img class="video-poster" src="assets/videos/poster-07.jpg" alt="" loading="lazy" />
-              <button class="video-play-button" type="button" aria-label="Reproduzir leitura de jogo">
-                <span aria-hidden="true"></span>
-              </button>
-            </div>
-            <span id="clip-label-7" data-i18n="clipSeven">Leitura de jogo</span>
-          </article>
-          <article>
-            <div class="video-shell">
-              <video data-video-src="assets/videos/highlight-08.mp4" muted playsinline webkit-playsinline preload="none" poster="assets/videos/poster-08.jpg" aria-labelledby="clip-label-8"></video>
-              <img class="video-poster" src="assets/videos/poster-08.jpg" alt="" loading="lazy" />
-              <button class="video-play-button" type="button" aria-label="Reproduzir momento decisivo">
-                <span aria-hidden="true"></span>
-              </button>
-            </div>
-            <span id="clip-label-8" data-i18n="clipEight">Momento decisivo</span>
-          </article>
-        </div>
-      </section>
-
-      <!-- ===================== SELEÇÃO ITALIANA ===================== -->
-      <section class="selecao section-pad" id="selecao">
-        <div class="section-heading">
-          <p class="section-kicker"><span class="idx">02</span> <span data-i18n="selecaoKicker">Seleção Italiana</span></p>
-          <h2 data-i18n="selecaoTitle">Convocado pela Itália.</h2>
-        </div>
-
-        <div class="selecao-body">
-          <figure class="selecao-image">
-            <img src="assets/champions-league.png" alt="Leonardo Brunelli na UEFA Futsal Champions League" />
-          </figure>
-
-          <div class="selecao-stats" aria-label="Números pela Seleção Italiana">
-            <article>
-              <!-- PREENCHER: número de convocações pela Seleção Italiana (trocar o —) -->
-              <strong data-selecao="convocacoes">—</strong>
-              <span data-i18n="selecaoCallups">Convocações</span>
-            </article>
-            <article>
-              <!-- PREENCHER: número de gols pela Seleção Italiana (trocar o —) -->
-              <strong data-selecao="gols">—</strong>
-              <span data-i18n="selecaoGoals">Gols pela seleção</span>
-            </article>
-            <article>
-              <strong>2024</strong>
-              <span data-i18n="selecaoFirst">Primeira convocação</span>
-            </article>
-          </div>
-        </div>
-
-        <!--
-          GOLS PELA SELEÇÃO — os vídeos chegam depois.
-          Para ativar um slot quando o vídeo chegar:
-          1. Remova a classe "is-soon" do .video-shell e apague o <span class="soon-badge">.
-          2. Antes da imagem .video-poster, adicione o vídeo e o botão de play:
-             <video data-video-src="assets/videos/selecao-gol-01.mp4" muted playsinline webkit-playsinline preload="none" poster="assets/videos/selecao-poster-01.jpg" aria-labelledby="goal-label-1"></video>
-             <button class="video-play-button" type="button" aria-label="Reproduzir gol pela seleção"><span aria-hidden="true"></span></button>
-          3. Troque o src da imagem .video-poster pelo poster do gol.
-        -->
-        <div class="goal-block">
-          <h3 class="goal-block-title" data-i18n="selecaoGoalsTitle">Gols pela Seleção</h3>
-          <div class="video-grid goal-grid" aria-label="Gols pela Seleção Italiana">
-            <article>
-              <div class="video-shell is-soon">
-                <img class="video-poster" src="assets/italy-cup.png" alt="" loading="lazy" />
-                <span class="soon-badge" data-i18n="comingSoon">Em breve</span>
-              </div>
-              <span data-i18n="selecaoGoalSlot">Gol pela Itália</span>
-            </article>
-            <article>
-              <div class="video-shell is-soon">
-                <img class="video-poster" src="assets/meta-action.png" alt="" loading="lazy" />
-                <span class="soon-badge" data-i18n="comingSoon">Em breve</span>
-              </div>
-              <span data-i18n="selecaoGoalSlot">Gol pela Itália</span>
-            </article>
-            <article>
-              <div class="video-shell is-soon">
-                <img class="video-poster" src="assets/genzano-strike.png" alt="" loading="lazy" />
-                <span class="soon-badge" data-i18n="comingSoon">Em breve</span>
-              </div>
-              <span data-i18n="selecaoGoalSlot">Gol pela Itália</span>
-            </article>
-          </div>
         </div>
       </section>
 
       <!-- ===================== TÍTULOS / VITÓRIAS ===================== -->
       <section class="titles section-pad" id="titulos">
         <div class="section-heading">
-          <p class="section-kicker"><span class="idx">03</span> <span data-i18n="titlesKicker">Títulos e reconhecimento</span></p>
+          <p class="section-kicker"><span class="idx">02</span> <span data-i18n="titlesKicker">Títulos e reconhecimento</span></p>
           <h2 data-i18n="titlesTitle">Títulos e Seleção Italiana.</h2>
         </div>
         <div class="titles-carousel">
@@ -373,7 +217,7 @@
 
       <section class="stats section-pad" id="numeros">
         <div class="section-heading">
-          <p class="section-kicker"><span class="idx">04</span> <span data-i18n="statsKicker">Números da temporada</span></p>
+          <p class="section-kicker"><span class="idx">03</span> <span data-i18n="statsKicker">Números da temporada</span></p>
           <h2 data-i18n="statsTitle">Temporada na Serie A italiana.</h2>
         </div>
         <div class="stats-grid">
@@ -398,7 +242,7 @@
 
       <section class="profile section-pad split" id="perfil">
         <div class="section-copy">
-          <p class="section-kicker"><span class="idx">05</span> <span data-i18n="profileKicker">Perfil do atleta</span></p>
+          <p class="section-kicker"><span class="idx">04</span> <span data-i18n="profileKicker">Perfil do atleta</span></p>
           <h2 data-i18n="profileTitle">Pivô de referência, artilheiro nato e versátil.</h2>
           <p data-i18n="profileText">
             Um verdadeiro bomber, destaca-se pelo faro de gol, pela qualidade na finalização e pela presença ofensiva. Além de atuar como pivô, possui versatilidade para jogar pelas alas ou como último homem, adaptando-se às diferentes necessidades da equipe.
@@ -414,6 +258,117 @@
         <figure class="feature-photo">
           <img src="assets/leo-profile.jpg" alt="Leonardo Brunelli comemorando pelo Ecocity Genzano" onerror="this.onerror=null;this.src='assets/genzano-strike.png'" />
         </figure>
+      </section>
+
+      <!-- ===================== LANCES / HIGHLIGHTS ===================== -->
+      <section class="video-section section-pad" id="videos">
+        <div class="section-heading video-heading">
+          <p class="section-kicker"><span class="idx">05</span> <span data-i18n="videosKicker">Lances</span></p>
+          <h2 data-i18n="videosTitle">Melhores momentos em quadra.</h2>
+          <p data-i18n="videosText">
+            Finalizações, jogo de pivô e jogadas decisivas.
+          </p>
+        </div>
+
+        <!-- Player principal: vídeo grande em destaque -->
+        <div class="video-feature">
+          <div class="video-shell">
+            <video
+              id="featured-video"
+              data-video-src="assets/videos/highlight-01.mp4"
+              muted
+              playsinline
+              webkit-playsinline
+              preload="none"
+              poster="assets/videos/poster-01.jpg"
+              aria-labelledby="featured-now"
+            ></video>
+            <img class="video-poster" src="assets/videos/poster-01.jpg" alt="" />
+            <button class="video-play-button" type="button" aria-label="Reproduzir lance">
+              <span aria-hidden="true"></span>
+            </button>
+          </div>
+          <p class="video-now">
+            <span class="video-now-idx">01</span>
+            <span id="featured-now" data-i18n="clipOne">Ataque ao espaço</span>
+          </p>
+        </div>
+
+        <!--
+          COMO ADICIONAR UM NOVO LANCE:
+          1. Copie um bloco <button class="video-thumb"> abaixo e cole no fim da lista.
+          2. Ajuste data-src e data-poster para o novo arquivo
+             (ex: assets/videos/highlight-09.mp4 e assets/videos/poster-09.jpg).
+          3. Troque o src da imagem, o data-num e o número visível.
+          4. Crie a chave i18n nova ("clipNine") em data-key + data-i18n e
+             cadastre-a em PT e IT dentro de script.js (objeto translations).
+        -->
+        <div class="video-playlist" aria-label="Escolha um lance">
+          <button class="video-thumb is-active" type="button" aria-pressed="true"
+            data-src="assets/videos/highlight-01.mp4" data-poster="assets/videos/poster-01.jpg"
+            data-key="clipOne" data-num="01" aria-label="Reproduzir ataque ao espaço">
+            <img src="assets/videos/poster-01.jpg" alt="" loading="lazy" />
+            <span class="video-thumb-num">01</span>
+            <span class="video-thumb-play" aria-hidden="true"></span>
+            <span class="video-thumb-label" data-i18n="clipOne">Ataque ao espaço</span>
+          </button>
+          <button class="video-thumb" type="button" aria-pressed="false"
+            data-src="assets/videos/highlight-02.mp4" data-poster="assets/videos/poster-02.jpg"
+            data-key="clipTwo" data-num="02" aria-label="Reproduzir jogo de pivô">
+            <img src="assets/videos/poster-02.jpg" alt="" loading="lazy" />
+            <span class="video-thumb-num">02</span>
+            <span class="video-thumb-play" aria-hidden="true"></span>
+            <span class="video-thumb-label" data-i18n="clipTwo">Jogo de pivô</span>
+          </button>
+          <button class="video-thumb" type="button" aria-pressed="false"
+            data-src="assets/videos/highlight-03.mp4" data-poster="assets/videos/poster-03.jpg"
+            data-key="clipThree" data-num="03" aria-label="Reproduzir finalização">
+            <img src="assets/videos/poster-03.jpg" alt="" loading="lazy" />
+            <span class="video-thumb-num">03</span>
+            <span class="video-thumb-play" aria-hidden="true"></span>
+            <span class="video-thumb-label" data-i18n="clipThree">Finalização</span>
+          </button>
+          <button class="video-thumb" type="button" aria-pressed="false"
+            data-src="assets/videos/highlight-04.mp4" data-poster="assets/videos/poster-04.jpg"
+            data-key="clipFour" data-num="04" aria-label="Reproduzir construção ofensiva">
+            <img src="assets/videos/poster-04.jpg" alt="" loading="lazy" />
+            <span class="video-thumb-num">04</span>
+            <span class="video-thumb-play" aria-hidden="true"></span>
+            <span class="video-thumb-label" data-i18n="clipFour">Construção ofensiva</span>
+          </button>
+          <button class="video-thumb" type="button" aria-pressed="false"
+            data-src="assets/videos/highlight-05.mp4" data-poster="assets/videos/poster-05.jpg"
+            data-key="clipFive" data-num="05" aria-label="Reproduzir pressão e intensidade">
+            <img src="assets/videos/poster-05.jpg" alt="" loading="lazy" />
+            <span class="video-thumb-num">05</span>
+            <span class="video-thumb-play" aria-hidden="true"></span>
+            <span class="video-thumb-label" data-i18n="clipFive">Pressão e intensidade</span>
+          </button>
+          <button class="video-thumb" type="button" aria-pressed="false"
+            data-src="assets/videos/highlight-06.mp4" data-poster="assets/videos/poster-06.jpg"
+            data-key="clipSix" data-num="06" aria-label="Reproduzir presença na área">
+            <img src="assets/videos/poster-06.jpg" alt="" loading="lazy" />
+            <span class="video-thumb-num">06</span>
+            <span class="video-thumb-play" aria-hidden="true"></span>
+            <span class="video-thumb-label" data-i18n="clipSix">Presença na área</span>
+          </button>
+          <button class="video-thumb" type="button" aria-pressed="false"
+            data-src="assets/videos/highlight-07.mp4" data-poster="assets/videos/poster-07.jpg"
+            data-key="clipSeven" data-num="07" aria-label="Reproduzir leitura de jogo">
+            <img src="assets/videos/poster-07.jpg" alt="" loading="lazy" />
+            <span class="video-thumb-num">07</span>
+            <span class="video-thumb-play" aria-hidden="true"></span>
+            <span class="video-thumb-label" data-i18n="clipSeven">Leitura de jogo</span>
+          </button>
+          <button class="video-thumb" type="button" aria-pressed="false"
+            data-src="assets/videos/highlight-08.mp4" data-poster="assets/videos/poster-08.jpg"
+            data-key="clipEight" data-num="08" aria-label="Reproduzir momento decisivo">
+            <img src="assets/videos/poster-08.jpg" alt="" loading="lazy" />
+            <span class="video-thumb-num">08</span>
+            <span class="video-thumb-play" aria-hidden="true"></span>
+            <span class="video-thumb-label" data-i18n="clipEight">Momento decisivo</span>
+          </button>
+        </div>
       </section>
 
       <section class="career section-pad" id="carreira">

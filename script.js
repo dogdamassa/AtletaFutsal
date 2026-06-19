@@ -3,7 +3,7 @@ const translations = {
     navProfile: "Perfil",
     navStats: "Números",
     navVideos: "Lances",
-    navSelection: "Seleção",
+    navSelection: "Champions",
     navCareer: "Carreira",
     navTitles: "Títulos",
     navContact: "Contato",
@@ -52,14 +52,10 @@ const translations = {
     videosTitle: "Melhores momentos em quadra.",
     videosText:
       "Finalizações, jogo de pivô e jogadas decisivas.",
-    selecaoKicker: "Seleção Italiana",
-    selecaoTitle: "Convocado pela Itália.",
-    selecaoCallups: "Convocações",
-    selecaoGoals: "Gols pela seleção",
-    selecaoFirst: "Primeira convocação",
-    selecaoGoalsTitle: "Gols pela Seleção",
-    selecaoGoalSlot: "Gol pela Itália",
-    comingSoon: "Em breve",
+    championsKicker: "Nível internacional",
+    championsTitle: "UEFA Futsal Champions League.",
+    championsText:
+      "Participação na UEFA Futsal Champions League pelo Meta Catania, atual campeão italiano de futsal.",
     clipOne: "Ataque ao espaço",
     clipTwo: "Jogo de pivô",
     clipThree: "Finalização",
@@ -97,7 +93,7 @@ const translations = {
     navProfile: "Profilo",
     navStats: "Numeri",
     navVideos: "Video",
-    navSelection: "Nazionale",
+    navSelection: "Champions",
     navCareer: "Carriera",
     navTitles: "Titoli",
     navContact: "Contatti",
@@ -146,14 +142,10 @@ const translations = {
     videosTitle: "I migliori momenti in campo.",
     videosText:
       "Finalizzazioni, gioco da pivot e giocate decisive.",
-    selecaoKicker: "Nazionale italiana",
-    selecaoTitle: "Convocato dall'Italia.",
-    selecaoCallups: "Convocazioni",
-    selecaoGoals: "Gol in Nazionale",
-    selecaoFirst: "Prima convocazione",
-    selecaoGoalsTitle: "Gol in Nazionale",
-    selecaoGoalSlot: "Gol con l'Italia",
-    comingSoon: "In arrivo",
+    championsKicker: "Livello internazionale",
+    championsTitle: "UEFA Futsal Champions League.",
+    championsText:
+      "Partecipa alla UEFA Futsal Champions League con il Meta Catania, attuale campione d'Italia di futsal.",
     clipOne: "Attacco dello spazio",
     clipTwo: "Gioco da pivot",
     clipThree: "Finalizzazione",
@@ -202,7 +194,10 @@ if (siteHeader) {
   window.addEventListener("scroll", updateHeader, { passive: true });
 }
 
+let currentLanguage = "pt";
+
 function setLanguage(language) {
+  currentLanguage = language === "it" ? "it" : "pt";
   document.documentElement.lang = language === "it" ? "it" : "pt-BR";
 
   translatedNodes.forEach((node) => {
@@ -300,6 +295,52 @@ document.querySelectorAll(".video-shell").forEach((shell) => {
   });
 });
 
+/* ============ PLAYER DE LANCES (vídeo grande + botões) ============
+   Um único vídeo em destaque. Os botões (.video-thumb) trocam o clipe
+   que toca no player grande, atualizam o rótulo "tocando agora" e
+   marcam qual lance está ativo. */
+const featuredVideo = document.getElementById("featured-video");
+const featuredShell = featuredVideo ? getVideoShell(featuredVideo) : null;
+const featuredNow = document.getElementById("featured-now");
+const featuredNowIdx = document.querySelector(".video-now-idx");
+const videoThumbs = document.querySelectorAll(".video-thumb");
+
+function selectClip(thumb, autoplay) {
+  if (!featuredVideo || !featuredShell) return;
+
+  const { src, poster, key, num } = thumb.dataset;
+
+  videoThumbs.forEach((other) => {
+    const isActive = other === thumb;
+    other.classList.toggle("is-active", isActive);
+    other.setAttribute("aria-pressed", String(isActive));
+  });
+
+  // Reinicia o player e aponta para o novo clipe.
+  featuredVideo.pause();
+  featuredShell.classList.remove("is-ready", "is-playing");
+  featuredVideo.removeAttribute("src");
+  featuredVideo.dataset.videoSrc = src;
+  featuredVideo.poster = poster;
+
+  const posterImg = featuredShell.querySelector(".video-poster");
+  if (posterImg) posterImg.src = poster;
+
+  // Atualiza o rótulo respeitando o idioma atual.
+  if (featuredNow) {
+    featuredNow.dataset.i18n = key;
+    featuredNow.textContent =
+      translations[currentLanguage][key] || thumb.textContent.trim();
+  }
+  if (featuredNowIdx && num) featuredNowIdx.textContent = num;
+
+  if (autoplay) playVideo(featuredVideo);
+}
+
+videoThumbs.forEach((thumb) => {
+  thumb.addEventListener("click", () => selectClip(thumb, true));
+});
+
 setLanguage("pt");
 
 /* ============ CARROSSEL DE TÍTULOS ============
@@ -383,12 +424,10 @@ if (!prefersReducedMotion && "IntersectionObserver" in window) {
 
   addReveal(".section-heading");
   addReveal(".split > *", true);
-  addReveal(".selecao-image");
-  addReveal(".selecao-stats article", true);
   addReveal(".status-strip > div", true);
   addReveal(".stats-grid article", true);
-  addReveal(".video-showcase");
-  addReveal(".video-grid article", true);
+  addReveal(".video-feature");
+  addReveal(".video-thumb", true);
   addReveal(".timeline li", true);
   addReveal(".title-cards article", true);
   addReveal(".gallery-section img", true);

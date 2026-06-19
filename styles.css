@@ -853,26 +853,160 @@ h3 {
   cursor: wait;
 }
 
-.video-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 14px;
-  margin-top: 24px;
+/* Player principal: vídeo grande em destaque */
+.video-feature {
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-.video-grid article {
+.video-feature .video-shell {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 36px 90px -46px rgba(0, 0, 0, 0.95);
+}
+
+.video-now {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 20px;
+  font-family: "Barlow Condensed", "Inter", sans-serif;
+  font-size: clamp(1.15rem, 2vw, 1.5rem);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+
+.video-now-idx {
+  display: inline-grid;
+  place-items: center;
+  min-width: 40px;
+  height: 40px;
+  padding: 0 12px;
+  border-radius: 999px;
+  background: var(--gold);
+  color: #0a0a0b;
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+/* Botões dos outros lances (galeria) */
+.video-playlist {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(168px, 1fr));
+  gap: 14px;
+  margin-top: 34px;
+}
+
+.video-thumb {
+  position: relative;
+  display: block;
+  padding: 0;
   overflow: hidden;
+  aspect-ratio: 16 / 10;
   border: 1px solid var(--line);
   border-radius: var(--radius-sm);
-  background: var(--surface);
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+  text-align: left;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.video-grid span {
-  display: block;
-  padding: 14px 16px;
-  color: var(--muted);
+.video-thumb img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+  transition: opacity 0.25s ease, transform 0.4s ease;
+}
+
+.video-thumb::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 35%, rgba(0, 0, 0, 0.82));
+  pointer-events: none;
+}
+
+.video-thumb:hover,
+.video-thumb:focus-visible {
+  transform: translateY(-3px);
+  border-color: rgba(245, 197, 66, 0.55);
+  outline: none;
+}
+
+.video-thumb:hover img,
+.video-thumb:focus-visible img {
+  opacity: 0.98;
+  transform: scale(1.05);
+}
+
+.video-thumb-num {
+  position: absolute;
+  top: 9px;
+  left: 9px;
+  z-index: 2;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: rgba(10, 10, 11, 0.62);
+  font-family: "Barlow Condensed", "Inter", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.video-thumb-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  width: 0;
+  height: 0;
+  transform: translate(-40%, -50%);
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent;
+  border-left: 15px solid #fff;
+  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.65));
+  transition: border-left-color 0.2s ease, transform 0.2s ease;
+}
+
+.video-thumb:hover .video-thumb-play {
+  transform: translate(-40%, -50%) scale(1.12);
+}
+
+.video-thumb-label {
+  position: absolute;
+  left: 13px;
+  right: 13px;
+  bottom: 11px;
+  z-index: 2;
   font-size: 0.82rem;
-  font-weight: 600;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* Lance em reprodução no player grande */
+.video-thumb.is-active {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 1px var(--gold), 0 18px 44px -24px rgba(245, 197, 66, 0.65);
+}
+
+.video-thumb.is-active img {
+  opacity: 0.5;
+}
+
+.video-thumb.is-active .video-thumb-num {
+  background: var(--gold);
+  color: #0a0a0b;
+}
+
+.video-thumb.is-active .video-thumb-play {
+  border-left-color: var(--gold);
 }
 
 /* ============ SELEÇÃO ITALIANA ============ */
@@ -1273,8 +1407,7 @@ h3 {
   }
 
   .status-strip,
-  .stats-grid,
-  .video-grid {
+  .stats-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -1514,9 +1647,17 @@ h3 {
   }
 
   .status-strip,
-  .stats-grid,
-  .video-grid {
+  .stats-grid {
     grid-template-columns: 1fr;
+  }
+
+  .video-playlist {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .video-now {
+    font-size: 1.1rem;
   }
 
   .title-cards article {
@@ -1630,8 +1771,6 @@ h3 {
 
   .feature-photo,
   .highlight-image,
-  .video-showcase,
-  .video-grid article,
   .title-cards article {
     border-radius: 0;
   }
@@ -1648,16 +1787,6 @@ h3 {
   .stats-grid article {
     padding: 26px 0;
     border-left: 0;
-  }
-
-  .video-showcase img {
-    height: auto;
-    aspect-ratio: 4 / 5;
-    object-position: center top;
-  }
-
-  .video-showcase figcaption strong {
-    font-size: clamp(3rem, 18vw, 5rem);
   }
 
   .gallery-section {
@@ -1680,10 +1809,29 @@ h3 {
 
   .contact-actions {
     width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
   }
 
   .contact-actions a {
-    flex: 1;
+    flex: none;
+    width: 100%;
+  }
+
+  /* WhatsApp e Instagram lado a lado; WoneSports ocupa a linha inteira
+     para não "sobrar"/transbordar como acontecia com flex: 1 (a pílula
+     com logo + texto não conseguia encolher como os outros botões). */
+  .contact-actions .agency-card {
+    grid-column: 1 / -1;
+    justify-content: center;
+    min-height: 54px;
+    padding: 0 18px;
+  }
+
+  .contact-actions .whatsapp-button,
+  .contact-actions .instagram-button {
+    min-height: 54px;
   }
 }
 
